@@ -609,6 +609,7 @@
     .story-card1 {
         /* grid-column: 1 / -1; */
         width: 100%;
+        
     }
 
     .stories {
@@ -629,9 +630,16 @@
     .story-card1 {
         /* grid-column: 1 / -1; */
         width: 100%;
+        box-sizing: none;
+        border: #111111 2px solid;
     }
     .story-card1 img{
         margin-left: 250px;
+    }
+    .our-stories{
+        margin: 0px;
+        padding: 0px;
+        
     }
 
     .stories {
@@ -642,24 +650,29 @@
         flex-direction: column;
     }
     .story-card2{
+        display: grid;
         grid-template-columns: repeat(2, 1fr);
+        margin-left: 0px;
+        border: red 2px solid;
     }
 
     .story-card {
-        width: 95%;
-        max-width: 350px;
+        /* width: 95%; */
+        max-width: 172px;
     }
 
     .story-card img {
-        max-width: 100%;
+        /* max-width: 100%; */
+        max-block-size: 70%;
+        max-inline-size: fit-content;
     }
 
     .story-card h3 {
-        font-size: 0.9rem;
+        font-size: 0.6rem;
     }
 
     .story-card p {
-        font-size: 0.8rem;
+        font-size: 0.6rem;
     }
 }
 
