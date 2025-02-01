@@ -294,12 +294,14 @@
 }
 
 /* Standard Curriculum Section */
+/* Services Section */
 .services {
     text-align: center;
     background-image: url('/assets/bg.png'); 
     background-size: cover;
     background-position: center;
     color: rgb(174, 148, 148);
+    margin: 140px 140px;
     
 }
 
@@ -315,8 +317,6 @@
     display: flex;
     justify-content: center;
     gap: 1.5rem;
-    margin: 30px 141px;
-    padding: 30px 0 30px 0;
 }
 
 .card {
@@ -335,9 +335,10 @@
 
 .card h3 {
     font-size: 1.5rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
     color: #111;
-    font-weight: 800;
+    font-weight: 600;
+    margin-top: 1rem;
 }
 
 .card p {
@@ -370,11 +371,12 @@
 
 
 
-/* Mobile Responsiveness */
+/* Services Mobile Responsiveness */
 @media screen and (max-width: 390px){
     
     .services{
         padding: 2rem 1rem;
+        margin: 0;
     }
 
     .services h2{
@@ -389,8 +391,11 @@
 
     .card {
         max-width: 100%;
+        padding-top: 1.5rem;
     }
-   
+    .card h3{
+        font-weight: 600;
+    }
 }
 
 /* Our Stories */
@@ -626,7 +631,9 @@
     /* .stories {
         grid-template-columns: 1fr;
     } */
-
+    #box-1 {
+        box-sizing: content-box;
+    }
     .story-card1 {
         /* grid-column: 1 / -1; */
         width: 100%;
@@ -681,23 +688,28 @@
 
 .arrival {
     text-align: left;
-    border: 2px solid;
-    margin: 0 140px; 
+    margin: 0 140px;
+    padding: 20px 0;
 }
-.arrival-h2 {    
+.arrival-h2 {
     color: #179800;
     padding: 35px 0;
-     
+    font-size: 2rem;
+    text-align: center;
 }
-.arrival-offers {       
+.arrival-offers {
     display: flex;
-    gap: 15px;    
-    border: 2px solid;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
 }
 .arrival-offers h3 {
     color: white;
-    padding: 2rem 2rem;
+    padding: 2rem;
+    font-size: 1.5rem;
 }
+
 /* Dawat Card */
 .dawat-card {
     display: flex;
@@ -706,22 +718,20 @@
     background-color: rgb(17, 84, 20);
     border-radius: 16px;
     gap: 20px;
-    padding: 20px; 
+    padding: 20px;
     width: 100%;
+    max-width: 600px;
     box-sizing: border-box;
 }
 
-#dawat{
-    width: 60%;
+#dawat, #indiagate {
+    flex: 1;
 }
 
-#indiagate{
-    width: 40%;
-}
-.dawat-left{
+.dawat-left {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     text-align: left;
 }
 
@@ -729,15 +739,29 @@
     width: 100%;
     display: flex;
 }
-.dawat-left img{
+
+.dawat-left h3 {
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+.dawat-left img {
     width: 246px;
-    height: 76px;
+    height: auto;
     margin-bottom: 10px;
 }
 
-.dawat-right{
+.dawat-right img {
+    width: 100%;
+    max-width: 321px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.dawat-right {
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .btn-dawat {
@@ -752,9 +776,8 @@
     max-width: 334px;
     padding: 10px 20px;
     background-color: #63B76D;
-    font-weight: 300px;
+    font-weight: 600;
 }
-
 
 /* India Gate Card */
 .india-gate-card {
@@ -763,106 +786,94 @@
     align-items: center;
     background-color: #102861;
     border-radius: 16px;
-    }
+    padding: 20px;
+    max-width: 600px;
+}
+
 .btn-india-gate {
-       
-        transition: background-color 0.3s;
-        
-        background-color: #2A4D97;
-};
-.btn-india-gate h3{
+    transition: background-color 0.3s;
+    background-color: #2A4D97;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.btn-india-gate h3 {
     font-size: 1.5rem;
     font-weight: 800;
     color: #ffffff;
     margin-top: 0px;
     margin-bottom: 0px;
 }
-    
-/* dawaat responsiveness*/
 
-@media screen and (max-width: 390px) {
-    
-    #dawat{
-        width: 100%;
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .arrival {
+        margin: 0 20px;
+        padding: 10px 0;
     }
-    
-    #indiagate{
-        width: 100%;
-    }
-    .arrival{
-        margin: 0
-    }
-  
-    
+
     .arrival-offers {
-        flex-direction: column; /* Stack both cards vertically */
-        align-items: center; /* Center them horizontally */
-       
-    }
-
-    .dawat-card {
-        display: flex;
-        flex-direction: row; /* Ensure the contents are in row layout */
-        align-items: center; /* Align items vertically */
-        justify-content: space-between; /* Keep space between left and right sections */
-        max-width: 350px; /* Ensure it doesn’t stretch too much */
-        border-radius: 16px; /* Rounded corners */
-        margin-bottom: 15px; /* Space between cards */
-        height: auto; /* Allow the card height to adjust based on content */
-    }
-
-    .dawat-left,
-    .dawat-right {
-        display: flex;
-        justify-content: center; /* Center content inside both left and right sections */
+        flex-direction: column;
         align-items: center;
     }
 
-    /* Left Section */
-    .dawat-left {
-        flex-direction: column; /* Stack the left section content vertically */
-        text-align: left;
-        width: 50%; /* Ensure left part takes half space */
+    .dawat-card, .india-gate-card {
+        flex-direction: column;
+        align-items: center;
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .dawat-left, .dawat-right {
+        width: 100%;
+        text-align: center;
     }
 
     .dawat-left img {
-        width: 90px; /* Resize the logo */
+        width: auto;
+        max-width: 80%;
+    }
+
+    .dawat-right img {
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 390px) {
+    .arrival {
+        margin: 0;
+    }
+
+    .arrival-offers {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .dawat-card, .india-gate-card {
+        flex-direction: column;
+        align-items: center;
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .dawat-left, .dawat-right {
+        width: 100%;
+        text-align: center;
+    }
+
+    .dawat-left img {
+        width: 90px;
         height: auto;
         margin-bottom: 10px;
     }
 
-    .btn-dawat-left {
-        display: flex;
-        justify-content: center;
-        width: 100%;
-    }
-
-    .btn-dawat {
-        width: 150px;
-        height: 35px;
-        font-size: 0.8rem; /* Make font smaller */
-        padding: 8px 15px;
-    }
-
-    h3 {
-        font-size: 1rem;
-        margin: 0;
-        padding: 0;
-        white-space: nowrap; /* Prevent line breaks */
-    }
-
-    /* Right Section */
-    .dawat-right {
-        width: 50%; /* Right part of the card */
-    }
-
     .dawat-right img {
-        max-width: 120px; 
-        /* max-height: 80px; */
+        max-width: 120px;
         width: auto;
         height: auto;
-        object-fit: contain; 
-       }
+        object-fit: contain;
+    }
 }
 
 /* Grocery News */
@@ -874,10 +885,9 @@
     align-items: center;
     border-radius: 20px;
     position: relative;
-    top: 228px;
+    top: 225px;
     margin: 0 140px;
     flex-wrap: wrap;
-    text-align: left;
     flex-direction: row;
     gap: 20px;
 }
@@ -888,56 +898,47 @@
     height: auto;
     max-height: 348px;
     object-fit: cover;
-}
-
-.grocery-news .content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    width: 100%;
-    max-width: 500px;
+    display: block;
 }
 
 .grocery-news h3, .grocery-news p, .grocery-news input, .grocery-news button {
-    /* width: 100%; */
     max-width: 400px;
-    margin: 5px 0;
-    text-align: left;
+    margin: 10px;
 }
 
+.grocery-news h3{
+    font-size: 2rem;
+}
+
+.grocery-news p{
+    font-size: 1.2rem;
+}
 .grocery-news input {
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 5px;
     width: 90%;
     max-width: 350px;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: 50px;
 }
 
-.btn-subscribe {
+.btn-subscribe {   
+    display: block;
     color: white;
     border: none;
     border-radius: 8px;
     font-size: 0.8rem;
     cursor: pointer;
     transition: background-color 0.3s;
-    height: 45px;
+    height: 35px;
     width: 164px;
-    background-color: #179800;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
+    background-color: #179800;  
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 390px) {
     .grocery-news {
         flex-direction: column;
         margin: 0 20px;
-        top: 275px;
+        top: 275px;     
     }
 
     .grocery-news img {
@@ -945,15 +946,31 @@
         height: auto;
     }
 
+    .grocery-news h3{
+        color: rgba(23, 152, 0, 1);
+        font-size: 1.3rem;
+    } 
+    
+    .grocery-news p{
+        font-size: 1rem;
+    }
+    .grocery-right{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+    }
+
     .btn-subscribe {
+        display: block;
         color: white;
         border: none;
         border-radius: 8px;
         font-size: 0.8rem;
         cursor: pointer;
         transition: background-color 0.3s;
-        height: 45px;
-        width: 164px;
+        height: 34px;
+        width: 121px;
         background-color: #179800;
     }
     .grocery-news h3, .grocery-news p {
@@ -965,19 +982,10 @@
         padding: 12px;
         width: 90%;
         max-width: 320px;
-        border-radius: 10px;
-        text-align: center;
-        display: flex;
-        justify-content: center;
+        border-radius: 10px;        
     }
-    .btn-subscribe {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 10px auto;
-    }
+    
 }
-
 
 
 /* Footer */
