@@ -1,7 +1,4 @@
 /* styles.css */
-
-
-
 .sora-font {
     font-family: "Sora", serif;
     font-optical-sizing: auto;
@@ -422,19 +419,21 @@
 .stories {    
     border: none;
     margin-top: 40px;
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
+    /* display: grid;
+    grid-template-columns: repeat(4,1fr); */
+    display: flex;
     gap: 10px;
     margin: 30px 141px;
 }
+
 
 #box-1{
     grid-row: span 3;
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
-    width: 100%;
-    align-items: stretch;
+    width: 40%;
+    /* align-items: stretch; */
     margin-top: 0px; 
     gap: 30px;
 }
@@ -487,6 +486,11 @@
     margin: 2rem 0 2rem;
     color: #333333;
     line-height: 1.5;
+}
+.story-card2{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 10px;
 }
 .btn-popular {
     color: black;
@@ -599,11 +603,11 @@
     }
 
     .stories {
-        grid-template-columns: 1fr;
+        /* grid-template-columns: 1fr; */
     }
 
     .story-card1 {
-        grid-column: 1 / -1;
+        /* grid-column: 1 / -1; */
         width: 100%;
     }
 
@@ -613,17 +617,17 @@
     }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 390px) {
     .our-stories h2 {
         font-size: 1.5rem;
     }
 
-    .stories {
+    /* .stories {
         grid-template-columns: 1fr;
-    }
+    } */
 
     .story-card1 {
-        grid-column: 1 / -1;
+        /* grid-column: 1 / -1; */
         width: 100%;
     }
     .story-card1 img{
@@ -631,9 +635,14 @@
     }
 
     .stories {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
+        /* grid-template-columns: repeat(2, 1fr); */
+        /* gap: 10px; */
         margin: 10px 70px;
+        display: flex;
+        flex-direction: column;
+    }
+    .story-card2{
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .story-card {
@@ -656,19 +665,21 @@
 
 
 /* Arrival & Offers */
+
 .arrival {
-    display: flex;
-    flex-direction: column;
+    text-align: left;
+    border: 2px solid;
+    margin: 0 140px; 
 }
-.arrival-h2 {
-    margin-left: 140px;
+.arrival-h2 {    
     color: #179800;
     padding: 35px 0;
+     
 }
 .arrival-offers {       
-    display: flex; 
-    margin: 0 140px;
-    gap: 15px;  
+    display: flex;
+    gap: 15px;    
+    border: 2px solid;
 }
 .arrival-offers h3 {
     color: white;
@@ -677,22 +688,61 @@
 /* Dawat Card */
 .dawat-card {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    background-color: rgb(17 84 20);
+    background-color: rgb(17, 84, 20);
     border-radius: 16px;
+    gap: 20px;
+    padding: 20px; 
+    width: 100%;
+    box-sizing: border-box;
 }
+
+#dawat{
+    width: 60%;
+}
+
+#indiagate{
+    width: 40%;
+}
+.dawat-left{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+}
+
+.btn-dawat-left {
+    width: 100%;
+    display: flex;
+}
+.dawat-left img{
+    width: 246px;
+    height: 76px;
+    margin-bottom: 10px;
+}
+
+.dawat-right{
+    display: flex;
+    justify-content: center;
+}
+
 .btn-dawat {
     color: white;
     border: none;
     border-radius: 8px;
-    font-size: 0.8rem;
+    font-size: 1.5rem;
     cursor: pointer;
     transition: background-color 0.3s;
-    height: 65px;
-    width: 334px;
+    height: 60px;
+    width: 300px;
+    max-width: 334px;
+    padding: 10px 20px;
     background-color: #63B76D;
+    font-weight: 300px;
 }
+
+
 /* India Gate Card */
 .india-gate-card {
     display: flex;
@@ -702,14 +752,9 @@
     border-radius: 16px;
     }
 .btn-india-gate {
-        color: white;
-        border: none;
-        border-radius: 8px;
-        font-size: 0.8rem;
-        cursor: pointer;
+       
         transition: background-color 0.3s;
-        height: 65px;
-        width: 334px;
+        
         background-color: #2A4D97;
 };
 .btn-india-gate h3{
@@ -720,63 +765,91 @@
     margin-bottom: 0px;
 }
     
-.btn-india-gate {
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 0.8rem;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    height: 65px;
-    width: 334px;
-    background-color: #2A4D97;
-}
+/* dawaat responsiveness*/
 
-/* Responsive Design */
-@media screen and (max-width: 768px) {
-    .arrival h2 {
-        font-size: 1.8rem;
-    }
-
-    .arrival-offers {
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-    }
-
-    .arrival-card {
-        width: 90%;
-        max-width: 400px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .arrival h2 {
-        font-size: 1.5rem;
-    }
-
-    .arrival-offers {
+@media screen and (max-width: 390px) {
+    
+    #dawat{
         width: 100%;
-        max-width: 100%;
+    }
+    
+    #indiagate{
+        width: 100%;
+    }
+    .arrival{
+        margin: 0
+    }
+  
+    
+    .arrival-offers {
+        flex-direction: column; /* Stack both cards vertically */
+        align-items: center; /* Center them horizontally */
+       
+    }
+
+    .dawat-card {
+        display: flex;
+        flex-direction: row; /* Ensure the contents are in row layout */
+        align-items: center; /* Align items vertically */
+        justify-content: space-between; /* Keep space between left and right sections */
+        max-width: 350px; /* Ensure it doesn’t stretch too much */
+        border-radius: 16px; /* Rounded corners */
+        margin-bottom: 15px; /* Space between cards */
+        height: auto; /* Allow the card height to adjust based on content */
+    }
+
+    .dawat-left,
+    .dawat-right {
+        display: flex;
+        justify-content: center; /* Center content inside both left and right sections */
+        align-items: center;
+    }
+
+    /* Left Section */
+    .dawat-left {
+        flex-direction: column; /* Stack the left section content vertically */
+        text-align: left;
+        width: 50%; /* Ensure left part takes half space */
+    }
+
+    .dawat-left img {
+        width: 90px; /* Resize the logo */
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    .btn-dawat-left {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .btn-dawat {
+        width: 150px;
+        height: 35px;
+        font-size: 0.8rem; /* Make font smaller */
+        padding: 8px 15px;
+    }
+
+    h3 {
+        font-size: 1rem;
+        margin: 0;
         padding: 0;
+        white-space: nowrap; /* Prevent line breaks */
     }
 
-    .arrival-card {
-        width: 95%;
-        max-width: 350px;
+    /* Right Section */
+    .dawat-right {
+        width: 50%; /* Right part of the card */
     }
 
-    .arrival-card img {
-        max-width: 100%;
-    }
-
-    .arrival-card h3 {
-        font-size: 0.9rem;
-    }
-
-    .arrival-card p {
-        font-size: 0.8rem;
-    }
+    .dawat-right img {
+        max-width: 120px; 
+        /* max-height: 80px; */
+        width: auto;
+        height: auto;
+        object-fit: contain; 
+       }
 }
 
 /* Grocery News */
@@ -898,7 +971,7 @@
 .footer {
     background-color: rgba(23, 152, 0, 1);
     padding: 2rem 0 2rem 0;
-    height: 658px;
+    /* height: 658px; */
 }
 
 .footer-container {
@@ -979,7 +1052,7 @@
 }
 
 
-/* Mobile Responsiveness */
+/*  footer Mobile Responsiveness */
 @media screen and (max-width: 390px){
     
     .footer-container {
@@ -987,7 +1060,8 @@
         text-align: left;
         gap: 2rem;
         margin: 0;
-        padding: 2rem 1rem;        
+        padding: 2rem 1rem;      
+        border: 2px solid;        
     }
        
     .footer-navigation{
