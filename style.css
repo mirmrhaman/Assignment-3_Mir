@@ -1,0 +1,958 @@
+/* styles.css */
+
+
+
+.sora-font {
+    font-family: "Sora", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+/* General Reset */
+* {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.display-flex{
+    display: flex;
+}
+.bg-grey{
+    background-color: rgb(239, 235, 227);
+}
+.bg-white{
+    background-color: #F7F7F7;
+}
+.bg-black{
+    background-color: #111111;
+}
+.bg-orange{
+    background-color: #FEA301;
+}
+.bg-skyblue{
+    background-color: #01ACFD;
+}
+.bg-green{
+    background-color: rgba(23, 152, 0, 1);
+}
+.bg-purple{
+    color: #5D58EF;
+}
+.bg-flashing{
+    color: #05D4DF;
+}
+.text-green{
+    color: rgba(23, 152, 0, 1);
+}
+.text-skyblue{
+    color: #01ACFD;
+}
+.text-flashing{
+    color: #05D4DF;
+}
+.text-purple{
+    color: #5D58EF;
+}
+.text-black{
+    color: #111111;
+}
+
+
+/* Marquee */
+.marquee {
+    color: #5D58EF;
+    padding: 1rem 0;
+    overflow: hidden;
+    font-weight: 800;
+    
+}
+
+.marquee p {
+    animation: scroll-left 30s linear infinite;
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #fff;
+}
+
+.logo {
+    margin-left: 107px;
+}
+
+.logo img {
+    height: 40px; 
+}
+
+.logo2{
+    display: none;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    color: none;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #555; 
+}
+
+.icon{
+    height: 24;
+    width: 30px;
+    margin: 25px;
+
+}
+
+.btn-primary {
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    height: 45px;
+    width: 117px;
+}
+
+.btn-login{
+    color: black;
+    margin-right: 12px;
+    border: 1px solid rgba(23, 152, 0, 1);
+
+}
+.btn-Register{
+    width: 146px;
+}
+
+.btn-primary:hover {
+    background-color: #f09600; 
+}
+
+/* Hamburger Menu */
+#menu-toggle {
+    visibility: hidden;
+}
+
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.menu-icon span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: rgba(23, 152, 0, 1);
+}
+
+/* Navbar Responsiveness */
+
+@media screen and (max-width: 390px) {
+    .navbar {
+        border: 1.25px solid rgba(23, 152, 0, 1);
+        justify-content: space-between;
+        padding: 1rem 1rem;
+    }
+
+    .logo {
+        margin-left: 0; 
+        display: flex; 
+        border: none;
+        display: none; 
+    }
+
+    .logo2{
+        display: block;
+        margin-left: 0;        
+    }
+
+    .menu-icon {
+        display: flex; 
+        margin-right: 0; 
+    }
+
+    .logo h1{
+        display: none;
+    }
+    .nav-links {
+        display: none; 
+    }
+
+    .ibtn{
+        display: none;
+    }
+}
+
+
+
+
+/* Banner */
+
+.banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(to top, rgb(239, 235, 227), white);
+}
+
+.banner-content img{
+    max-width: 1031px;
+    max-height: 838px;
+}
+
+.banner-content h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.banner-content p {
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #555;
+}
+
+.banner-btn {
+    background-color: #111111; 
+    color: #ffffff;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 197px;
+}
+
+.banner-btn:hover {
+    background-color: #333333;
+}
+
+.banner-image img {
+    max-width: 100%;
+    height: auto;
+    margin-top: .2rem;
+}
+
+/* Banner Mobile Responsiveness */
+@media screen and (max-width: 390px){
+    .banner {
+        text-align: center;
+        padding: 2rem 1rem;
+    }
+
+    .banner-content {
+        width: 100%;
+        margin-top: 2rem;
+
+    }
+
+    .banner-content h1 {
+        font-size: 2rem;
+    }
+
+    .banner-content i{
+        display: none;
+    }
+    .banner-content p {
+        font-size: 1rem;
+    }
+
+    .banner-content img {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    .banner-btn{
+        width: auto;
+    }
+}
+
+/* Standard Curriculum Section */
+.services {
+    text-align: center;
+    background-image: url('/assets/bg.png'); 
+    background-size: cover;
+    background-position: center;
+    color: rgb(174, 148, 148);
+    
+}
+
+.services h2 {
+    font-size: 2.8rem;
+    font-weight: 600;
+    margin-top: 30px;
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 30px 141px;
+    padding: 30px 0 30px 0;
+}
+
+.card {
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+    flex: 1;
+    height: 367px;
+    width: 424px;
+    align-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: rgb(239, 235, 227);
+}
+
+
+.card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #111;
+    font-weight: 800;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.circle{
+    background-color: white;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: min(25vw, 100px); 
+    height: min(25vw, 100px);
+          
+}
+
+.circle img{
+    width: 70%;
+    height: 70%;
+    object-fit: cover;
+    border: 50%;          
+}
+
+
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 390px){
+    
+    .services{
+        padding: 2rem 1rem;
+    }
+
+    .services h2{
+        font-size: 1.5rem;
+    }
+    .cards-container {
+        flex-direction: column;
+        gap: 1.5rem;
+        margin: 0;
+        padding: 20px 0 20px 0;
+    }
+
+    .card {
+        max-width: 100%;
+    }
+   
+}
+
+/* Our Stories */
+
+#story{
+    margin-top: 40px;
+    text-align: left;
+    color: rgba(23, 152, 0, 1);;
+}
+.our-stories {   
+    background-blend-mode: overlay;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgb(239, 235, 227);
+    
+}
+
+.our-stories h2{
+    font-size: 1.5rem; 
+    padding: 140px 0 16px 140px; 
+}
+.our-stories h3{
+    font-size: 1rem;    
+}
+.stories {    
+    border: none;
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 19px;
+    margin: 30px 141px;
+}
+
+#box-1{
+    grid-row: span 3;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+    align-items: stretch;
+    margin-top: 0px; 
+    gap: 30px;
+}
+#box-1 img{
+    border-radius: 10px 10px 0px 0px;
+    margin-top: 0px;
+}
+
+#box-1 div{
+    flex: 1;
+}
+
+.story-card {
+    width: 275px;
+    /* height: 118px; */
+    border-radius: 16px;
+    background: white;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    /* gap: 10px; */
+} 
+.story-card1{
+    width: 424px;
+    height: 402px;
+    border-radius: 10px;
+    background: white;
+    background: linear-gradient(145deg, rgb(83, 219, 58) 50%, rgb(255, 255, 255) 104%);
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    color: #ffffff;
+    padding: 30px 30px 0 30px;
+}
+.story-card1 img{    
+    border-radius: 10px;
+    margin-left: 80px;   
+    margin-bottom: -10px;
+}
+.story-card1 p{
+    font-size: 1rem;
+    margin: 2rem 0 2rem;
+    color: #333333;
+    line-height: 1.5;
+}
+.btn-popular {
+    color: black;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    height: 45px;
+    width: 117px;
+}
+.story-card img{    
+    width: 86px;
+    height: 86px;
+    object-fit: contain;
+    border-radius: 8px;
+    background: #EFEFEF;
+       
+}
+.story-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* .story-card img{
+    width: 100%;
+    border-radius: 10px 10px 0px 0px;
+}  */
+.story-card h3{
+    font-size: 1rem;
+    /* margin: 2rem; */
+    font-weight: bold;
+    color: #333;
+}
+/* .story-card p{    
+    font-size: 1rem;
+    margin: 0 2rem 2rem;
+    color: #555;
+    line-height: 1.5;
+} */
+.story-btn{
+    margin-top: 50px;
+    padding-bottom: 50px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.story-in-btn{
+    width: 179.44px;
+    height: 38.35px;    
+    border: none;
+    border-radius: 47.93px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-left: 2rem;
+    transform: translateY(-70%);
+
+}
+.story-lft-btn{
+    width: 179.44px;
+    height: 38.35px;
+    padding: 10px 10px;
+    border: none;
+    border-radius: 47.93px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    position: inherit;
+    transform: translateY(-70%); 
+    margin-left: 2rem; 
+}
+
+.story-view-btn{
+    width: 150px;
+}
+
+/* Product Details */
+.story-card{
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+}
+.details {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+/* Rating */
+.story-card .rating {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.8rem;
+    color: #FFA500; /* Gold color for stars */
+}
+/* Product Price */
+.story-card p {
+    font-size: 0.9rem;
+    color: #555;
+    font-weight: bold;
+}
+
+/* .our-stories media */
+
+@media screen and (max-width: 390px){
+    
+    #box-1 {
+        display: none;
+    }
+    
+    .stories {
+        grid-template-columns: repeat(2, 1fr); 
+        gap: auto;
+        margin: 0;
+        padding: 2rem 1rem; 
+    }
+
+    .story-card {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .story-card p{
+        display: none;        
+    }
+
+    .story-card h3{
+        font-size: 0.7rem;
+        margin: 0.5rem 1.25rem 1rem 1.25rem;
+    }
+
+    .story-in-btn{
+        font-weight: bold;
+        font-size: 0.5rem;
+        width: 103px;
+        height: 22px;
+        margin-left: 20px;
+        text-align: center;
+        
+    }
+
+    .story-btn{
+        margin: 20px;
+    }
+    .our-stories h2{
+        font-size: 1.6rem;
+        padding: 20px 0 20px;
+    }
+
+    .our-stories{
+        border-bottom: solid #01ACFD ;
+    }
+    .story-view-btn{
+        height: 40px;
+        width: 140px;
+        border-radius: 15px;
+    }
+    
+}
+
+/* Arrival & Offers */
+.arrival {
+    display: flex;
+    flex-direction: column;
+}
+.arrival-h2 {
+    margin-left: 140px;
+    color: #179800;
+    padding: 35px 0;
+}
+.arrival-offers {       
+    display: flex; 
+    margin: 0 140px;
+    gap: 15px;  
+}
+.arrival-offers h3 {
+    color: white;
+    padding: 2rem 2rem;
+}
+/* Dawat Card */
+.dawat-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(17 84 20);
+    border-radius: 16px;
+}
+.btn-dawat {
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    height: 65px;
+    width: 334px;
+    background-color: #63B76D;
+}
+/* India Gate Card */
+.india-gate-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #102861;
+    border-radius: 16px;
+    }
+.btn-india-gate {
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 0.8rem;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        height: 65px;
+        width: 334px;
+        background-color: #2A4D97;
+};
+.btn-india-gate h3{
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+    
+.btn-india-gate {
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    height: 65px;
+    width: 334px;
+    background-color: #2A4D97;
+}
+
+/* Grocery News */
+.grocery-news {
+    background-color: #EFEBE3;
+    padding: 2rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 20px;
+    position: relative;
+    top: 228px;
+    margin: 0 140px;
+    flex-wrap: wrap;
+    text-align: left;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.grocery-news img {
+    width: 100%;
+    max-width: 442px;
+    height: auto;
+    max-height: 348px;
+    object-fit: cover;
+}
+
+.grocery-news .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 500px;
+}
+
+.grocery-news h3, .grocery-news p, .grocery-news input, .grocery-news button {
+    /* width: 100%; */
+    max-width: 400px;
+    margin: 5px 0;
+    text-align: left;
+}
+
+.grocery-news input {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 90%;
+    max-width: 350px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-subscribe {
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    height: 45px;
+    width: 164px;
+    background-color: #179800;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+@media screen and (max-width: 768px) {
+    .grocery-news {
+        flex-direction: column;
+        margin: 0 20px;
+        top: 275px;
+    }
+
+    .grocery-news img {
+        width: 100%;
+        height: auto;
+    }
+
+    .btn-subscribe {
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 0.8rem;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        height: 45px;
+        width: 164px;
+        background-color: #179800;
+    }
+    .grocery-news h3, .grocery-news p {
+        width: 90%;
+        max-width: 350px;
+        text-align: center;
+    }
+    .grocery-news input {
+        padding: 12px;
+        width: 90%;
+        max-width: 320px;
+        border-radius: 10px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+    }
+    .btn-subscribe {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10px auto;
+    }
+}
+
+
+
+/* Footer */
+.footer {
+    background-color: rgba(23, 152, 0, 1);
+    padding: 2rem 0 2rem 0;
+    height: 658px;
+}
+
+.footer-container {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: flex-start;  
+    gap: 1rem; 
+    margin: 0 141px; 
+}
+.footer-gap{
+    margin-top: 375px;
+}
+
+.footer-column1, .footer-navigation, .footer-social {
+    flex: 1; 
+}
+
+/* Column 1: Text Styling */
+.footer-column1 p {
+    font-size: 1rem;
+    line-height: 1.5;    
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 10px;    
+}
+
+
+/* Column 2: Navigation Links */
+.footer-navigation h3,
+.footer-social h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.footer-navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-navigation li {
+    margin-bottom: 0.5rem;
+    line-height: 2;
+}
+
+.footer-navigation a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s;
+    font-weight: 400;
+}
+
+.footer-navigation a:hover {
+    color: white;
+}
+
+/* Column 3: Social Media Icons */
+.footer-social .social-icons img {
+    width: 30px; 
+    height: 30px;
+    margin-right: 10px;
+}
+
+.footer-social i {
+    margin-right: 10px;
+    cursor: pointer;
+    transition: transform 0.3s;
+    height: 23px;
+    width: 23px;
+}
+
+.footer-social img:hover {
+    transform: scale(1.1); 
+}
+
+.footer-social h3{
+    font-weight: 400;
+}
+
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 390px){
+    
+    .footer-container {
+        flex-direction: column;
+        text-align: left;
+        gap: 2rem;
+        margin: 0;
+        padding: 2rem 1rem;        
+    }
+       
+    .footer-navigation{
+        margin-left: 0;
+    }
+
+    .footer-social{
+        margin-left: 0;
+    }
+
+    .footer-logo img {
+        size-adjust: 60%;
+    }
+
+    .social-icons {
+        justify-content: left;
+        
+    }
+}
+
